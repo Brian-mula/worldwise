@@ -1,7 +1,8 @@
 import CitiItem from "../components/city/CitiItem";
-import { CitiType } from "../types/cittType";
+import { useCities } from "../contexts/CitiesContext";
 
-export default function Cities({ cities, isLoading}:{cities: CitiType[], isLoading: boolean}) {
+export default function Cities() {
+  const {cities, isLoading} = useCities();
 
   if(isLoading){
     return <div className="text-white flex justify-center py-3">
