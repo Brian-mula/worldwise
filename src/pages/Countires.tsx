@@ -1,8 +1,9 @@
 import CountryItem from "../components/city/CountryItem";
+import { useCities } from "../contexts/CitiesContext";
 import { CountryType } from "../types/CountryType";
-import { CitiType } from "../types/cittType";
 
-export default function Countires({cities}: {cities: CitiType[]}) {
+export default function Countires() {
+  const {cities}= useCities();
   const countries: CountryType[] = cities.reduce((acc:CountryType[], city)=>{
     if(!acc.map((city:CountryType)=>city.country).includes(city.country)){
       return [...acc, {country: city.country, flag: city.emoji}]
