@@ -8,12 +8,13 @@ interface CitiesContextProps{
     isLoading:boolean;
     city:CitiType | null;
     getCity:(id:number)=>void;
+    createCity:(city:CitiType)=>void;
 }
 
 const CitiesContext = createContext<CitiesContextProps>({} as CitiesContextProps);
 
 function CitiesProvider({children}:{children:React.ReactNode}){
-    const [cities, setCities] = useState([]);
+    const [cities, setCities] = useState<CitiType[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [city, setCity] = useState<CitiType | null>(null);
   
@@ -46,13 +47,33 @@ function CitiesProvider({children}:{children:React.ReactNode}){
             setIsLoading(false);
         }
     }
+    async function createCity(city:CitiType){
+      try {
+      setIsLoading(true);
+      const response = await fetch(`${BASE_URL}/cities`,{
+        method: "POST",
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify(city)
+      });
+      
+      const data = await response.json();
+      setCities((cities)=>[...cities, data]);
+      } catch (error) {
+          alert("Error fetching city");
+      }finally{
+          setIsLoading(false);
+      }
+  }
 
     return(
         <CitiesContext.Provider value={{
             cities,
             isLoading,
             city,
-            getCity
+            getCity,
+            createCity
         
         }}>
             {children}
