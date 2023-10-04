@@ -1,8 +1,9 @@
 import { LatLngExpression } from "leaflet";
 import { useEffect, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCities } from "../../contexts/CitiesContext";
+import { useUlrPosition } from "../../hooks/useUrlPosition";
 
 export default function MapDisplay() {
   const [mapPosition,setMapPosition] = useState<LatLngExpression>([51.505, -0.09]);
@@ -10,9 +11,7 @@ export default function MapDisplay() {
   
 
   const {cities} = useCities();
-    const[search] = useSearchParams()
-    const mapLat = search.get('lat');
-    const mapLng = search.get('lng');
+    const [mapLat, mapLng] = useUlrPosition();
 
     useEffect(() => {
       if(mapLat && mapLng){
