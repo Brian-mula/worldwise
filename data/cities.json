@@ -1,40 +1,64 @@
 {
-    "cities":[
-        {
-            "name":"Lisbon",
-            "country":"Portugal",
-            "emoji":"🇵🇹",
-            "date":"2017-01-01",
-            "notes":"",
-            "position":{
-                "lat":38.7222524,
-                "lng":-9.1393366
-            },
-            "id":12345
-        },
-        {
-            "name":"Madrid",
-            "country":"Spain",
-            "emoji":"🇪🇸",
-            "date":"2017-01-02",
-            "notes":"",
-            "position":{
-                "lat":40.4167754,
-                "lng":-3.7037902
-            },
-            "id":12346
-        },
-        {
-            "name":"Paris",
-            "country":"France",
-            "emoji":"🇫🇷",
-            "date":"2017-01-03",
-            "notes":"",
-            "position":{
-                "lat":48.856614,
-                "lng":2.3522219
-            },
-            "id":12347
-        }
-    ]
+  "cities": [
+    {
+      "name": "Lisbon",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2017-01-01",
+      "notes": "",
+      "position": {
+        "lat": 38.7222524,
+        "lng": -9.1393366
+      },
+      "id": 12345
+    },
+    {
+      "name": "Madrid",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2017-01-02",
+      "notes": "",
+      "position": {
+        "lat": 40.4167754,
+        "lng": -3.7037902
+      },
+      "id": 12346
+    },
+    {
+      "name": "Paris",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2017-01-03",
+      "notes": "",
+      "position": {
+        "lat": 48.856614,
+        "lng": 2.3522219
+      },
+      "id": 12347
+    },
+    {
+      "id": 1696437398730,
+      "name": "Nakuru",
+      "country": "Kenya",
+      "notes": "naks ",
+      "emoji": "🇰🇪",
+      "date": "2023-10-04T16:36:23.294Z",
+      "position": {
+        "lat": -0.17578097424708533,
+        "lng": 36.10107421875001
+      }
+    },
+    {
+      "id": 1696437474015,
+      "name": "Kajiado",
+      "country": "Kenya",
+      "notes": "",
+      "emoji": "🇰🇪",
+      "date": "2023-10-04T16:37:49.799Z",
+      "position": {
+        "lat": -1.537901237431487,
+        "lng": 36.87011718750001
+      }
+    }
+  ]
 }
